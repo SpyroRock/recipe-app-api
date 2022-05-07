@@ -159,7 +159,7 @@ class PrivateRecipeApiTest(TestCase):
         self.assertIn(ingredient2, ingredients)
 
     def test_partial_update_recipe(self):
-        """Test updating a recipe with patch"""
+        """Test updating a recipe with patch request"""
         recipe = sample_recipe(user=self.user)
         recipe.tags.add(sample_tag(user=self.user))
         new_tag = sample_tag(user=self.user, name='Curry')
@@ -175,7 +175,7 @@ class PrivateRecipeApiTest(TestCase):
         self.assertIn(new_tag, tags)
 
     def test_full_update_recipe(self):
-        """Test updating a recipe with put"""
+        """Test updating a recipe with put request"""
         recipe = sample_recipe(user=self.user)
         recipe.tags.add(sample_tag(user=self.user))
         payload = {
